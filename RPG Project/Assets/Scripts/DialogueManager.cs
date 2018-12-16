@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
 
+    public GameObject dialoguePortrait;
     public GameObject dialogueBox;
     public Text dialogueText;
 
@@ -16,19 +17,21 @@ public class DialogueManager : MonoBehaviour
         
     }
 
-    //void Update()
-    //{
-    //    //if (dialogueActive && Input.GetKeyDown(KeyCode.Space))
-    //    //{
-    //    //    dialogueBox.SetActive(false);
-    //    //    dialogueActive = false;
-    //    //}
-    //}
+    void Update()
+    {
+        if (dialogueActive && Input.GetKeyUp(KeyCode.Space))
+        {
+            dialogueBox.SetActive(false);
+            dialoguePortrait.SetActive(false);
+            dialogueActive = false;
+        }
+    }
 
     public void DialogueDisplayed(string dialogue)
     {
         dialogueActive = true;
         dialogueBox.SetActive(true);
+        dialoguePortrait.SetActive(true);
         dialogueText.text = dialogue;
     }
 }
