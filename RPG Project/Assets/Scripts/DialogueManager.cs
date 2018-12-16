@@ -16,14 +16,14 @@ public class DialogueManager : MonoBehaviour
         
     }
 
-    void Update()
-    {
-        //if (dialogueActive && Input.GetKeyDown(KeyCode.Space))
-        //{
-        //    dialogueBox.SetActive(false);
-        //    dialogueActive = false;
-        //}
-    }
+    //void Update()
+    //{
+    //    //if (dialogueActive && Input.GetKeyDown(KeyCode.Space))
+    //    //{
+    //    //    dialogueBox.SetActive(false);
+    //    //    dialogueActive = false;
+    //    //}
+    //}
 
     public void DialogueDisplayed(string dialogue)
     {
