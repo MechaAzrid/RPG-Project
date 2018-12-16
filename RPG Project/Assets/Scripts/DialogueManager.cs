@@ -12,6 +12,8 @@ public class DialogueManager : MonoBehaviour
 
     public bool dialogueActive;
 
+    public string[] dialogue;
+
     void Start()
     {
         
