@@ -20,7 +20,7 @@ public class TestingDialogueTrigger : MonoBehaviour
             {
                 FindObjectOfType<TestingDialogueManager>().StartDialogue(dialogue);
 
-                testingDialogueManager.DisplayNextSentence();
+                //testingDialogueManager.DisplayNextSentence();
             }
         }
 
