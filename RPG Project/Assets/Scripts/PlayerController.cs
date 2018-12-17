@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     private Animator playerAnimator;
     private bool playerMoving;
+    private bool playerRunning;
     private Vector2 lastMove;
 
     void Start()
@@ -33,7 +34,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 transform.Translate(new Vector3(Input.GetAxisRaw("Horizontal") * runSpeed * Time.deltaTime, 0f, 0f));
-                playerMoving = true;
+                playerRunning = true;
                 lastMove = new Vector2(Input.GetAxisRaw("Horizontal"), 0f);
             }
         }
@@ -50,7 +51,7 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 transform.Translate(new Vector3(0f, Input.GetAxisRaw("Vertical") * runSpeed * Time.deltaTime, 0f));
-                playerMoving = true;
+                playerRunning = true;
                 lastMove = new Vector2(0f, Input.GetAxisRaw("Vertical"));
             }
         }
@@ -59,6 +60,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetFloat("Move Y", Input.GetAxisRaw("Vertical"));
 
         playerAnimator.SetBool("Player Moving", playerMoving);
+        playerAnimator.SetBool("Player Running", playerRunning);
         playerAnimator.SetFloat("Last Move X", lastMove.x);
         playerAnimator.SetFloat("Last Move Y", lastMove.y);
     }
